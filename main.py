@@ -38,6 +38,14 @@ figure_canvas_reciprocal = FigureCanvasTkAgg(
 figure_canvas_reciprocal.draw()
 figure_canvas_reciprocal.get_tk_widget().pack()
 
+fig_exponential = plt.figure(figsize=(8, 5))
+fig_exponential.add_subplot(111).grid(True)
+figure_canvas_exponential = FigureCanvasTkAgg(
+    fig_exponential, window["-GRAPH_EXPONENTIAL-"].TKCanvas
+)
+figure_canvas_exponential.draw()
+figure_canvas_exponential.get_tk_widget().pack()
+
 while True:
     event, values = window.read()
 
@@ -290,5 +298,59 @@ while True:
             ax.clear()
         figure_canvas_reciprocal.draw()
         figure_canvas_reciprocal.get_tk_widget().pack()
+
+    # exponential graph functionality
+    a_exponential = values["-INPUT_A_EXPONENTIAL-"]
+    k_exponential = values["-INPUT_K_EXPONENTIAL-"]
+    x_start_exponential = values["-INPUT_X_START_EXPONENTIAL-"]
+    x_end_exponential = values["-INPUT_X_END_EXPONENTIAL-"]
+
+    is_valid_exponential = (
+        a_exponential and k_exponential and x_start_exponential and x_end_exponential
+    )
+
+    if event == "-CREATE_TABLE_EXPONENTIAL-":
+        if is_valid_exponential:
+            # clear previous data
+            table_data = []
+            window["-TABLE_EXPONENTIAL-"].update(table_data)
+
+            x_values, y_values = val.validate_exponential(
+                a_exponential, k_exponential, x_start_exponential, x_end_exponential
+            )
+            table_data.extend([[x, y] for x, y in zip(x_values, y_values)])
+            window["-TABLE_EXPONENTIAL-"].update(table_data)
+
+    if event == "-CREATE_GRAPH_EXPONENTIAL-":
+        if is_valid_exponential:
+            for ax in fig_exponential.axes:
+                ax.clear()
+            figure_canvas_exponential.draw()
+            figure_canvas_exponential.get_tk_widget().pack()
+            x_values, y_values = val.validate_exponential(
+                a_exponential, k_exponential, x_start_exponential, x_end_exponential
+            )
+            axes = fig_exponential.axes
+            axes[0].grid(True)
+            axes[0].plot(x_values, y_values, linestyle="-", color="blue")
+            figure_canvas_exponential.draw()
+            figure_canvas_exponential.get_tk_widget().pack()
+
+    if event == "-CLEAR_TABLE_EXPONENTIAL-":
+        window["-INPUT_A_EXPONENTIAL-"].update("")
+        window["-INPUT_K_EXPONENTIAL-"].update("")
+        window["-INPUT_X_START_EXPONENTIAL-"].update("")
+        window["-INPUT_X_END_EXPONENTIAL-"].update("")
+        window["-TABLE_EXPONENTIAL-"].update([])
+        for ax in fig_exponential.axes:
+            ax.clear()
+        figure_canvas_exponential.draw()
+        figure_canvas_exponential.get_tk_widget().pack()
+
+    if event == "-CLEAR_GRAPH_EXPONENTIAL-":
+        for ax in fig_exponential.axes:
+            ax.clear()
+        figure_canvas_exponential.draw()
+        figure_canvas_exponential.get_tk_widget().pack()
 
 window.close()

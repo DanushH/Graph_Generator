@@ -72,14 +72,15 @@ def validate_reciprocal(a, x_start, x_end):
         pass
 
 
-def validate_exponential(a, x_start, x_end):
+def validate_exponential(a, k, x_start, x_end):
     try:
         a = float(a)
+        k = float(k)
         x_start = float(x_start)
         x_end = float(x_end)
-        steps = (x_end - x_start) / 10
-        x_values = np.arange(x_start, x_end + steps, steps).round(2).tolist()
-        y_values = [round(a ** x, 2) for x in x_values]
+
+        x_values = np.arange(x_start, x_end, 1).round(2).tolist()
+        y_values = [round(a * (k ** x), 2) for x in x_values]
         return x_values, y_values
 
     except (TypeError, ValueError):
