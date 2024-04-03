@@ -107,7 +107,8 @@ Run your own local copy by following these steps.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-white.svg?style=for-the-badge&logo=linkedin&colorB=black
-[linkedin-url]: [linkedin.com/in/danushika-herath](https://www.linkedin.com/in/danushika-herath/)
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/danushika-herath
+
 
 <br/>
