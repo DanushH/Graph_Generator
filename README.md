@@ -108,6 +108,6 @@ Run your own local copy by following these steps.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-white.svg?style=for-the-badge&logo=linkedin&colorB=black
-[linkedin-url]: linkedin.com/in/danushika-herath
+[linkedin-url]: [linkedin.com/in/danushika-herath](https://www.linkedin.com/in/danushika-herath/)
 
 <br/>
