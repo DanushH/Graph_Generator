@@ -49,7 +49,7 @@ Run your own local copy by following these steps.
 
 <br/>
 
-## Usage
+## Features
 
 <br/>
 
