@@ -104,11 +104,14 @@ Run your own local copy by following these steps.
 
 <br/>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">
+   <a href="#readme-top">
+     <button type="button">back to top</button>
+   </a>
+</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-shield]: https://img.shields.io/badge/Linkedin-black?style=for-the-badge&logo=linkedin&logoColor=%230277BD
 [linkedin-url]: https://linkedin.com/in/danushika-herath
-
 
 <br/>
